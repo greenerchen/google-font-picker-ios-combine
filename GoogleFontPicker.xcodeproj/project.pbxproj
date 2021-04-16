@@ -1,0 +1,637 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA0DA1042629F54A00F487BD /* FontPersistentStoreStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0DA1032629F54A00F487BD /* FontPersistentStoreStrategy.swift */; };
+		AA0DA10A2629F5E200F487BD /* FontPersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0DA1092629F5E200F487BD /* FontPersistentStore.swift */; };
+		AA974DCA262638E000B6F670 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974DC9262638E000B6F670 /* AppDelegate.swift */; };
+		AA974DCC262638E000B6F670 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974DCB262638E000B6F670 /* SceneDelegate.swift */; };
+		AA974DCE262638E000B6F670 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974DCD262638E000B6F670 /* CanvasViewController.swift */; };
+		AA974DD1262638E100B6F670 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA974DCF262638E000B6F670 /* Main.storyboard */; };
+		AA974DD3262638E400B6F670 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA974DD2262638E400B6F670 /* Assets.xcassets */; };
+		AA974DD6262638E400B6F670 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA974DD4262638E400B6F670 /* LaunchScreen.storyboard */; };
+		AA974DEA26263AF100B6F670 /* UIViewController+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974DE926263AF100B6F670 /* UIViewController+Container.swift */; };
+		AA974DEF26263E1A00B6F670 /* GoogleFontPersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974DEE26263E1A00B6F670 /* GoogleFontPersistentStore.swift */; };
+		AA974DF926263F3E00B6F670 /* WebFontList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974DF826263F3E00B6F670 /* WebFontList.swift */; };
+		AA974DFD26263FAF00B6F670 /* WebFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974DFC26263FAF00B6F670 /* WebFont.swift */; };
+		AA974E0126264AF300B6F670 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974E0026264AF300B6F670 /* FontManager.swift */; };
+		AA974E0B2626E47F00B6F670 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974E0A2626E47F00B6F670 /* Endpoint.swift */; };
+		AA974E0F2626E93900B6F670 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974E0E2626E93900B6F670 /* NetworkController.swift */; };
+		AA974E182626F27B00B6F670 /* GoogleFontAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974E172626F27B00B6F670 /* GoogleFontAPITests.swift */; };
+		AA974E2A2628A64E00B6F670 /* GoogleFontPersistentStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974E292628A64E00B6F670 /* GoogleFontPersistentStoreTests.swift */; };
+		AA974E2E2628B0F000B6F670 /* GoogleFontPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974E2D2628B0F000B6F670 /* GoogleFontPicker.swift */; };
+		AA974E372628B3E600B6F670 /* GoogleFontCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974E362628B3E600B6F670 /* GoogleFontCell.swift */; };
+		AA974E3D2628BA8000B6F670 /* GoogleFontPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974E3C2628BA8000B6F670 /* GoogleFontPickerTests.swift */; };
+		AA974E422628BC2100B6F670 /* ViewControllerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974E412628BC2100B6F670 /* ViewControllerTestCase.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA974E1A2626F27B00B6F670 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA974DBE262638E000B6F670 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA974DC5262638E000B6F670;
+			remoteInfo = GoogleFontPicker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA0DA1032629F54A00F487BD /* FontPersistentStoreStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontPersistentStoreStrategy.swift; sourceTree = "<group>"; };
+		AA0DA1092629F5E200F487BD /* FontPersistentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontPersistentStore.swift; sourceTree = "<group>"; };
+		AA974DC6262638E000B6F670 /* GoogleFontPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleFontPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA974DC9262638E000B6F670 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AA974DCB262638E000B6F670 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AA974DCD262638E000B6F670 /* CanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
+		AA974DD0262638E000B6F670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AA974DD2262638E400B6F670 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA974DD5262638E400B6F670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AA974DD7262638E400B6F670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA974DE926263AF100B6F670 /* UIViewController+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Container.swift"; sourceTree = "<group>"; };
+		AA974DEE26263E1A00B6F670 /* GoogleFontPersistentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleFontPersistentStore.swift; sourceTree = "<group>"; };
+		AA974DF826263F3E00B6F670 /* WebFontList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebFontList.swift; sourceTree = "<group>"; };
+		AA974DFC26263FAF00B6F670 /* WebFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebFont.swift; sourceTree = "<group>"; };
+		AA974E0026264AF300B6F670 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		AA974E0A2626E47F00B6F670 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		AA974E0E2626E93900B6F670 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		AA974E152626F27B00B6F670 /* GoogleFontPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleFontPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA974E172626F27B00B6F670 /* GoogleFontAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleFontAPITests.swift; sourceTree = "<group>"; };
+		AA974E192626F27B00B6F670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA974E292628A64E00B6F670 /* GoogleFontPersistentStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleFontPersistentStoreTests.swift; sourceTree = "<group>"; };
+		AA974E2D2628B0F000B6F670 /* GoogleFontPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleFontPicker.swift; sourceTree = "<group>"; };
+		AA974E362628B3E600B6F670 /* GoogleFontCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleFontCell.swift; sourceTree = "<group>"; };
+		AA974E3C2628BA8000B6F670 /* GoogleFontPickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleFontPickerTests.swift; sourceTree = "<group>"; };
+		AA974E412628BC2100B6F670 /* ViewControllerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTestCase.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA974DC3262638E000B6F670 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA974E122626F27B00B6F670 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA974DBD262638E000B6F670 = {
+			isa = PBXGroup;
+			children = (
+				AA974DC8262638E000B6F670 /* GoogleFontPicker */,
+				AA974E162626F27B00B6F670 /* GoogleFontPickerTests */,
+				AA974DC7262638E000B6F670 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA974DC7262638E000B6F670 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA974DC6262638E000B6F670 /* GoogleFontPicker.app */,
+				AA974E152626F27B00B6F670 /* GoogleFontPickerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA974DC8262638E000B6F670 /* GoogleFontPicker */ = {
+			isa = PBXGroup;
+			children = (
+				AA974DDE262638EF00B6F670 /* App */,
+				AA974DE12626391D00B6F670 /* Modules */,
+				AA974DFF26264AD500B6F670 /* Manager */,
+				AA974DE52626396800B6F670 /* Models */,
+				AA974DE62626397500B6F670 /* Services */,
+				AA974DE826263AD700B6F670 /* Extensions */,
+				AA974DDF2626390500B6F670 /* Resources */,
+				AA974DE02626390C00B6F670 /* Supporting Files */,
+			);
+			path = GoogleFontPicker;
+			sourceTree = "<group>";
+		};
+		AA974DDE262638EF00B6F670 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AA974DC9262638E000B6F670 /* AppDelegate.swift */,
+				AA974DCB262638E000B6F670 /* SceneDelegate.swift */,
+				AA974DCF262638E000B6F670 /* Main.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AA974DDF2626390500B6F670 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA974DD2262638E400B6F670 /* Assets.xcassets */,
+				AA974DD4262638E400B6F670 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AA974DE02626390C00B6F670 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA974DD7262638E400B6F670 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA974DE12626391D00B6F670 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				AA974DE32626394300B6F670 /* Canvas */,
+				AA974DE42626395500B6F670 /* Font Picker */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		AA974DE32626394300B6F670 /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				AA974DCD262638E000B6F670 /* CanvasViewController.swift */,
+			);
+			path = Canvas;
+			sourceTree = "<group>";
+		};
+		AA974DE42626395500B6F670 /* Font Picker */ = {
+			isa = PBXGroup;
+			children = (
+				AA974E2D2628B0F000B6F670 /* GoogleFontPicker.swift */,
+				AA974E362628B3E600B6F670 /* GoogleFontCell.swift */,
+			);
+			path = "Font Picker";
+			sourceTree = "<group>";
+		};
+		AA974DE52626396800B6F670 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AA974DF726263F0F00B6F670 /* Web Fonts */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AA974DE62626397500B6F670 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AA974E092626E41100B6F670 /* Networking */,
+				AA974E042626E3BE00B6F670 /* Persistent Store */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AA974DE826263AD700B6F670 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AA974DE926263AF100B6F670 /* UIViewController+Container.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AA974DF726263F0F00B6F670 /* Web Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AA974DF826263F3E00B6F670 /* WebFontList.swift */,
+				AA974DFC26263FAF00B6F670 /* WebFont.swift */,
+			);
+			path = "Web Fonts";
+			sourceTree = "<group>";
+		};
+		AA974DFF26264AD500B6F670 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				AA974E0026264AF300B6F670 /* FontManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		AA974E042626E3BE00B6F670 /* Persistent Store */ = {
+			isa = PBXGroup;
+			children = (
+				AA0DA1032629F54A00F487BD /* FontPersistentStoreStrategy.swift */,
+				AA974DEE26263E1A00B6F670 /* GoogleFontPersistentStore.swift */,
+				AA0DA1092629F5E200F487BD /* FontPersistentStore.swift */,
+			);
+			path = "Persistent Store";
+			sourceTree = "<group>";
+		};
+		AA974E092626E41100B6F670 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AA974E0A2626E47F00B6F670 /* Endpoint.swift */,
+				AA974E0E2626E93900B6F670 /* NetworkController.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		AA974E162626F27B00B6F670 /* GoogleFontPickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA974E402628BC0500B6F670 /* Helpers */,
+				AA974E172626F27B00B6F670 /* GoogleFontAPITests.swift */,
+				AA974E292628A64E00B6F670 /* GoogleFontPersistentStoreTests.swift */,
+				AA974E3C2628BA8000B6F670 /* GoogleFontPickerTests.swift */,
+				AA974E192626F27B00B6F670 /* Info.plist */,
+			);
+			path = GoogleFontPickerTests;
+			sourceTree = "<group>";
+		};
+		AA974E402628BC0500B6F670 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AA974E412628BC2100B6F670 /* ViewControllerTestCase.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA974DC5262638E000B6F670 /* GoogleFontPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA974DDA262638E400B6F670 /* Build configuration list for PBXNativeTarget "GoogleFontPicker" */;
+			buildPhases = (
+				AA974DC2262638E000B6F670 /* Sources */,
+				AA974DC3262638E000B6F670 /* Frameworks */,
+				AA974DC4262638E000B6F670 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoogleFontPicker;
+			productName = GoogleFontPicker;
+			productReference = AA974DC6262638E000B6F670 /* GoogleFontPicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA974E142626F27B00B6F670 /* GoogleFontPickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA974E1C2626F27B00B6F670 /* Build configuration list for PBXNativeTarget "GoogleFontPickerTests" */;
+			buildPhases = (
+				AA974E112626F27B00B6F670 /* Sources */,
+				AA974E122626F27B00B6F670 /* Frameworks */,
+				AA974E132626F27B00B6F670 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA974E1B2626F27B00B6F670 /* PBXTargetDependency */,
+			);
+			name = GoogleFontPickerTests;
+			productName = GoogleFontPickerTests;
+			productReference = AA974E152626F27B00B6F670 /* GoogleFontPickerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA974DBE262638E000B6F670 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					AA974DC5262638E000B6F670 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					AA974E142626F27B00B6F670 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = AA974DC5262638E000B6F670;
+					};
+				};
+			};
+			buildConfigurationList = AA974DC1262638E000B6F670 /* Build configuration list for PBXProject "GoogleFontPicker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA974DBD262638E000B6F670;
+			productRefGroup = AA974DC7262638E000B6F670 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA974DC5262638E000B6F670 /* GoogleFontPicker */,
+				AA974E142626F27B00B6F670 /* GoogleFontPickerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA974DC4262638E000B6F670 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA974DD6262638E400B6F670 /* LaunchScreen.storyboard in Resources */,
+				AA974DD3262638E400B6F670 /* Assets.xcassets in Resources */,
+				AA974DD1262638E100B6F670 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA974E132626F27B00B6F670 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA974DC2262638E000B6F670 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA974E0126264AF300B6F670 /* FontManager.swift in Sources */,
+				AA974DEA26263AF100B6F670 /* UIViewController+Container.swift in Sources */,
+				AA974DCE262638E000B6F670 /* CanvasViewController.swift in Sources */,
+				AA974DEF26263E1A00B6F670 /* GoogleFontPersistentStore.swift in Sources */,
+				AA974E2E2628B0F000B6F670 /* GoogleFontPicker.swift in Sources */,
+				AA974DCA262638E000B6F670 /* AppDelegate.swift in Sources */,
+				AA974DF926263F3E00B6F670 /* WebFontList.swift in Sources */,
+				AA974DCC262638E000B6F670 /* SceneDelegate.swift in Sources */,
+				AA974E0F2626E93900B6F670 /* NetworkController.swift in Sources */,
+				AA974E0B2626E47F00B6F670 /* Endpoint.swift in Sources */,
+				AA0DA1042629F54A00F487BD /* FontPersistentStoreStrategy.swift in Sources */,
+				AA974DFD26263FAF00B6F670 /* WebFont.swift in Sources */,
+				AA974E372628B3E600B6F670 /* GoogleFontCell.swift in Sources */,
+				AA0DA10A2629F5E200F487BD /* FontPersistentStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA974E112626F27B00B6F670 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA974E2A2628A64E00B6F670 /* GoogleFontPersistentStoreTests.swift in Sources */,
+				AA974E182626F27B00B6F670 /* GoogleFontAPITests.swift in Sources */,
+				AA974E422628BC2100B6F670 /* ViewControllerTestCase.swift in Sources */,
+				AA974E3D2628BA8000B6F670 /* GoogleFontPickerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA974E1B2626F27B00B6F670 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA974DC5262638E000B6F670 /* GoogleFontPicker */;
+			targetProxy = AA974E1A2626F27B00B6F670 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AA974DCF262638E000B6F670 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA974DD0262638E000B6F670 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AA974DD4262638E400B6F670 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA974DD5262638E400B6F670 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA974DD8262638E400B6F670 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA974DD9262638E400B6F670 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA974DDB262638E400B6F670 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GoogleFontPicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.greenerchen.GoogleFontPicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA974DDC262638E400B6F670 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GoogleFontPicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.greenerchen.GoogleFontPicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AA974E1D2626F27B00B6F670 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GoogleFontPickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.greenerchen.GoogleFontPickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoogleFontPicker.app/GoogleFontPicker";
+			};
+			name = Debug;
+		};
+		AA974E1E2626F27B00B6F670 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GoogleFontPickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.greenerchen.GoogleFontPickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoogleFontPicker.app/GoogleFontPicker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA974DC1262638E000B6F670 /* Build configuration list for PBXProject "GoogleFontPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA974DD8262638E400B6F670 /* Debug */,
+				AA974DD9262638E400B6F670 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA974DDA262638E400B6F670 /* Build configuration list for PBXNativeTarget "GoogleFontPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA974DDB262638E400B6F670 /* Debug */,
+				AA974DDC262638E400B6F670 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA974E1C2626F27B00B6F670 /* Build configuration list for PBXNativeTarget "GoogleFontPickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA974E1D2626F27B00B6F670 /* Debug */,
+				AA974E1E2626F27B00B6F670 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA974DBE262638E000B6F670 /* Project object */;
+}
