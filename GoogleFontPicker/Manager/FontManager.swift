@@ -43,6 +43,17 @@ extension FontManager {
 
 extension FontManager {
     func getFont(_ webFont: WebFont) -> AnyPublisher<UIFont, Error> {
+        do {
+            if let font = try getLocalFont(of: webFont) {
+                return Future { promise in
+                    promise(.success(font))
+                }
+                .eraseToAnyPublisher()
+            }
+        } catch {
+            return Fail<UIFont,Error>(error: error)
+                .eraseToAnyPublisher()
+        }
         return remoteStore.getFont(webFont)
     }
     

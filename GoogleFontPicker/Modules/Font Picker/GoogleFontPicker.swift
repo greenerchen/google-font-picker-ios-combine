@@ -16,7 +16,7 @@ class GoogleFontPicker: UIViewController, ObservableObject, Identifiable {
     }
     
     // MARK: - Properties
-    private var fontStore = FontManager.shared
+    private weak var fontStore = FontManager.shared
     private var cancellables = Set<AnyCancellable>()
     
     lazy var collectionView: UICollectionView = {
@@ -63,38 +63,39 @@ extension GoogleFontPicker {
 // MARK: - Data source
 extension GoogleFontPicker: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return fontStore.webfonts.count
+        return fontStore?.webfonts.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: GoogleFontCell = collectionView.dequeueReusableCell(withReuseIdentifier: GoogleFontCell.reuseId(), for: indexPath) as! GoogleFontCell
         
-        let webfont = fontStore.webfonts[indexPath.item]
-        cell.nameLabel.text = webfont.family
-
-        $previewText
-            .receive(on: DispatchQueue.main)
-            .sink { (text) in
-                cell.previewLabel.text = text
-            }
-            .store(in: &cancellables)
-        
-        fontStore.getFont(webfont)
-            .receive(on: DispatchQueue.main)
-            .sink { (completion) in
-                switch completion {
-                case .failure(let error):
-                    print(error)
-                case .finished:
-                    break
+        if let webfont = fontStore?.webfonts[indexPath.item] {
+            cell.nameLabel.text = webfont.family
+            
+            $previewText
+                .receive(on: DispatchQueue.main)
+                .sink { (text) in
+                    cell.previewLabel.text = text
                 }
-            } receiveValue: { (font) in
-                cell.nameLabel.text = font.fontName
-                cell.nameLabel.font = font.withSize(10)
-                cell.previewLabel.font = font.withSize(34)
-            }
-            .store(in: &cancellables)
-
+                .store(in: &cancellables)
+            
+            fontStore?.getFont(webfont)
+                .receive(on: DispatchQueue.main)
+                .sink { (completion) in
+                    switch completion {
+                    case .failure(let error):
+                        print(error)
+                    case .finished:
+                        break
+                    }
+                } receiveValue: { (font) in
+                    cell.nameLabel.text = font.fontName
+                    cell.nameLabel.font = font.withSize(10)
+                    cell.previewLabel.font = font.withSize(34)
+                }
+                .store(in: &cancellables)
+        }
+        
         return cell
     }
 }
@@ -102,8 +103,8 @@ extension GoogleFontPicker: UICollectionViewDataSource {
 extension GoogleFontPicker: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         do {
-            let webfont = fontStore.webfonts[indexPath.item]
-            if let font = try fontStore.getLocalFont(of: webfont) {
+            if let webfont = fontStore?.webfonts[indexPath.item],
+               let font = try fontStore?.getLocalFont(of: webfont) {
                 selectedFont.send(font)
             }
         } catch {

@@ -28,6 +28,7 @@ class GoogleFontCell: UICollectionViewCell {
         previewLabel.text = ""
         nameLabel.font = .systemFont(ofSize: 10)
         previewLabel.font = .systemFont(ofSize: 34)
+        isSelected = false
     }
     
     // MARK: - Properties
