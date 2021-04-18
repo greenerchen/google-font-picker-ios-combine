@@ -74,12 +74,11 @@ extension GoogleFontPicker: UICollectionViewDataSource {
             
             $previewText
                 .receive(on: DispatchQueue.main)
-                .sink { (text) in
-                    cell.previewLabel.text = text
-                }
+                .compactMap { $0 }
+                .assign(to: \.text, on: cell.previewLabel)
                 .store(in: &cancellables)
             
-            fontStore?.getFont(webfont)
+            let sharedWebFont = fontStore?.getFont(webfont)
                 .receive(on: DispatchQueue.main)
                 .sink { (completion) in
                     switch completion {

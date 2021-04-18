@@ -81,9 +81,8 @@ extension CanvasViewController {
     private func bindFontPicker() {
         fontPicker.selectedFont
             .subscribe(on: DispatchQueue.main)
-            .sink { [unowned self] (font) in
-                self.textView.font = font.withSize(34)
-            }
+            .map { $0.withSize(34) }
+            .assign(to: \.font, on: textView)
             .store(in: &cancellables)
     }
     
