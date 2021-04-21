@@ -12,8 +12,9 @@ import Combine
 class GoogleFontPersistentStore {
     // MAKR: - Properties
     private var networkController: NetworkController = NetworkController()
-    private var googleFontsApiKey = "" // PUT YOUR API KEY HERE
+    private var googleFontsApiKey = "AIzaSyBvS_AsZDcZjwEDoi_Lvg6YUTkSPx4bE6Y" // PUT YOUR API KEY HERE
     private var cancellables = Set<AnyCancellable>()
+    private var localFontStore = FontPersistentStore()
 }
 
 // MARK: Get fonts from remote fonts service
@@ -60,24 +61,6 @@ extension GoogleFontPersistentStore: FontPersistentStoreStrategy {
 // MARK: - Save to local files
 extension GoogleFontPersistentStore {
     private func save(_ data: Data, forWebFont webFont: WebFont) throws {
-        if let appDirectoryURL = Bundle.main.resourceURL {
-            let fontDirectoryURL = appDirectoryURL
-                .appendingPathComponent("WebFonts", isDirectory: true)
-                .appendingPathComponent(webFont.family, isDirectory: true)
-            let fontFileURL = fontDirectoryURL.appendingPathComponent(UUID().uuidString)
-            
-            do {
-                let fileManager = FileManager.default
-                if !fileManager.fileExists(atPath: fontDirectoryURL.absoluteString) {
-                    try fileManager.createDirectory(at: fontDirectoryURL, withIntermediateDirectories: true, attributes: nil)
-                }
-                try data.write(to: fontFileURL)
-                if let style = webFont.variants.first {
-                    webFont.localFiles[style] = fontFileURL
-                }
-            } catch {
-                throw GoogleFontError.savefontFileFailed
-            }
-        }
+        try localFontStore.save(data, forWebFont: webFont)
     }
 }

@@ -11,6 +11,12 @@ import UIKit
 class FontPersistentStore {
     // MAKR: - Properties
     private var cancellables = Set<AnyCancellable>()
+    private lazy var fontDirectoryURL: URL? = {
+        guard let appDirectoryURL = Bundle.main.resourceURL else { return nil }
+        let fontDirectoryURL = appDirectoryURL
+            .appendingPathComponent("WebFonts", isDirectory: true)
+        return fontDirectoryURL
+    }()
     
     // MARK: Initializers
     init() {
@@ -40,15 +46,37 @@ extension FontPersistentStore {
     }
     
     private func makeFontDir() {
-        if let appDirectoryPath = Bundle.main.resourcePath {
-            let webCacheDirectoryPath = appDirectoryPath + "/WebFonts"
+        if let fontDirectoryURL = fontDirectoryURL {
             let fileManager = FileManager.default
-            if !fileManager.fileExists(atPath: webCacheDirectoryPath) {
+            if !fileManager.fileExists(atPath: fontDirectoryURL.absoluteString) {
                 do {
-                    try fileManager.createDirectory(atPath: webCacheDirectoryPath, withIntermediateDirectories: true, attributes: nil)
+                    try fileManager.createDirectory(atPath: fontDirectoryURL.absoluteString, withIntermediateDirectories: true, attributes: nil)
                 } catch {
                     print(error)
                 }
+            }
+        }
+    }
+}
+
+// MARK: - Save to local files
+extension FontPersistentStore {
+    func save(_ data: Data, forWebFont webFont: WebFont) throws {
+        if let fontDirectoryURL = fontDirectoryURL?
+            .appendingPathComponent(webFont.family, isDirectory: true) {
+            let fontFileURL = fontDirectoryURL.appendingPathComponent(UUID().uuidString)
+            
+            do {
+                let fileManager = FileManager.default
+                if !fileManager.fileExists(atPath: fontDirectoryURL.absoluteString) {
+                    try fileManager.createDirectory(at: fontDirectoryURL, withIntermediateDirectories: true, attributes: nil)
+                }
+                try data.write(to: fontFileURL)
+                if let style = webFont.variants.first {
+                    webFont.localFiles[style] = fontFileURL
+                }
+            } catch {
+                throw GoogleFontError.savefontFileFailed
             }
         }
     }
